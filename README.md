@@ -1,5 +1,6 @@
 # LemonJamsBot
 
+## BUILD Done, heroku boot failing(binds both on different port)
 ## Setup
 
 - Fill out the `.env`
