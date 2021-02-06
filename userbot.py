@@ -6,6 +6,8 @@ from aiohttp import web
 from aiohttp.http_websocket import WSMsgType
 from dotenv import load_dotenv
 from telethon import TelegramClient
+from telethon.sync import TelegramClient
+from telethon.sessions import StringSession
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.phone import GetGroupCallRequest
 from telethon.tl.functions.phone import JoinGroupCallRequest
@@ -13,10 +15,14 @@ from telethon.tl.types import DataJSON
 
 load_dotenv()
 
-client = TelegramClient(
-    'session', os.environ['API_ID'], os.environ['API_HASH'],
-)
-client.start()
+api_id = int(os.environ.get('API_ID'))
+api_hash = os.environ.get('API_HASH')
+session = os.environ.get('HU_STRING_SESSION')
+Port = int(os.environ.get('PORT', 6969))
+
+with TelegramClient(StringSession(session), api_id, api_hash) as client:
+    client.session.save()
+    client.start()
 
 
 async def get_entity(chat):
@@ -93,7 +99,7 @@ async def websocket_handler(request):
 def main():
     app = web.Application()
     app.router.add_route('GET', '/', websocket_handler)
-    web.run_app(app, port=1390)
+    web.run_app(app, host="0.0.0.0", port=Port)
 
 
 if __name__ == '__main__':
