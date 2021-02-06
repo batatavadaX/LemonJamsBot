@@ -1,0 +1,39 @@
+{
+    "name":"LemojJamsBot",
+    "description":"Rock your group",
+    "logo":"",
+    "keywords":[
+        "Telegram",
+        "Bot",
+        "Userbot"
+    ],
+    "env":{
+        "API_ID":{
+            "description":"https://my.telegram.org"
+        },
+        "API_HASH":{
+            "description":"https://my.telegram.org"
+        },
+        "HU_STRING_SESSION":{
+            "description":"TELETHON STRING",
+        }
+    },
+    "buildpacks":[
+        {
+            "url":"heroku/python"
+        },
+        {
+            "url":"heroku/nodejs"
+        }
+    ],
+    "formation": {
+        "web": {
+        "quantity": 1,
+        "size": "free"
+    },
+       "worker": {
+       "quantity": 1,
+       "size": "free"
+    }
+  },
+}
