@@ -1,2 +1,2 @@
-web: source start.sh
+web: source melonlemon.sh
 worker: npm start
