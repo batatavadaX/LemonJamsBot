@@ -15,8 +15,11 @@
             "description":"https://my.telegram.org"
         },
         "HU_STRING_SESSION":{
-            "description":"TELETHON STRING",
-        }
+            "description":"TELETHON STRING"
+        },
+        "BOT_TOKEN":{
+            "description":"BotFather"
+    }
     },
     "buildpacks":[
         {
