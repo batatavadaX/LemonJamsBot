@@ -5,5 +5,5 @@ dotenv.config();
 
 export default cleanEnv(process.env, {
     BOT_TOKEN: str(),
-    PORT: str(),
+    WEBSOCKET_URL: str(),
 });
