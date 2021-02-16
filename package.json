@@ -2,6 +2,10 @@
   "name": "lemonjamsbot",
   "version": "1.0.0",
   "main": "index.js",
+    "engines": {
+    "node": "*",
+    "npm": "*"
+  }, 
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
