@@ -17,7 +17,7 @@ export const playHandler = Composer.command('play', async ctx => {
         return;
     }
 
-    const index = await addToQueue(chat, text);
+    const index = await addToQueue(deunionize(ctx.chat).title, text);
 
     let message;
 
